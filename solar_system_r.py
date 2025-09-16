@@ -1,10 +1,3 @@
-# ===========================================
-# - Title:  Solar System Simulation
-# - Author: @zerot69 (Updated)
-# - Date:   16 Sep 2025
-# - Feature: Middle Mouse Drag Zoom
-# ============================================
-
 import pygame
 import math
 
