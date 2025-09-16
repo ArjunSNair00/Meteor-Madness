@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Controls</title>
+</head>
+<body>
+  <h2>Spaceship Controls</h2>
+  <label for="speed">Spaceship Speed:</label>
+  <input type="range" id="speed" min="1" max="20" value="5">
+  <span id="speedValue">5</span>
+
+  <script>
+    const speedSlider = document.getElementById("speed");
+    const speedValue = document.getElementById("speedValue");
+
+    speedSlider.addEventListener("input", () => {
+      speedValue.textContent = speedSlider.value;
+
+      fetch("/set_params", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({spaceship_speed: speedSlider.value})
+      });
+    });
+  </script>
+</body>
+</html>
